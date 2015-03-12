@@ -1,0 +1,16 @@
+{{{contents}}}
+
+<script async defer
+    src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+<script async defer
+    src="/bower_components/dashbars/dist/dashbars.min.js"></script>
+<script defer>
+    Dashbars.help(Handlebars);
+
+    $('.lang-hbs').each(function(index){
+        var data = window.data || $(this).attr('data') || {};
+        var src = $(this).text();
+        var template = Handlebars.compile(src);
+        $(this).text(template(data));
+    });
+</script>

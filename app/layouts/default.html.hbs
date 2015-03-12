@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{! Meta }}
+    <meta charset="utf=8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+    <title>{{{-find '-not-empty?' (-array this.title package.title)}}}</title>
+    <meta name="description"
+        content="{{{-find '-not-empty?' (-array this.description package.description)}}}"></meta>
+    <meta name="keywords"
+        content="{{{-join (-find '-not-empty?' (-array this.keywords package.keywords)) ','}}}"></meta>
+    <meta name="author"
+        content="{{{package.author.name}}}"></meta>
+
+  {{! Icons }}
+    <link rel="shortcut icon" href="images/favicon.ico"></link>
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png"></link>
+    <link rel="apple-touch-icon" sizes="72x72"
+        href=" ='images/apple-touch-icon-72x72.png"></link>
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="images/apple-touch-icon-114x114.png"></link>
+    <link rel="alternate" type="application/atom+xml"
+        title="{{{-find '-not-empty?' (-array title package.title)}}} &raquo; Feed"
+        href="{{{package.homepage}}}atom.xml"></link>
+
+    {{! Styles }}
+    <link rel="stylesheet" media="screen, projection"
+        href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" media="screen, projection"
+        href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.css"></link>
+    <link rel="stylesheet" media="screen, projection"
+        href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.css"></link>
+    <link rel="stylesheet" media="screen, projection"
+        href="/styles/style.css"></link>
+    {{! <link rel="stylesheet"
+        href="/styles/print.css"
+        media="print"></link> }}
+</head>
+
+<body>
+    {{! scripts using in docs }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    {{! Topbar }}
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">@</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/site/archive.html">Archive</a></li>
+                    <li><a href="/site/keyword-map.html">Keyword Map</a></li>
+                </ul>
+                <form id="search-form" class="navbar-form navbar-right"
+                        action="http://google.com/search" method="get">
+                    <input type="hidden" name="q"
+                        value="site:pismute.github.io"></input>
+                    <input class="form-control" type="text"
+                        name="q" results="0" placeholder="Search..."></input>
+                </form>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div>
+          {{{contents}}}
+        </div>
+        <footer class="footer">
+            <p>Copyright &copy; 2015+ Changwoo Park</p>
+            <p><small>Powered by <a href="https://github.com/pismute/gulp-makdoc">makdoc</a>, <a href="http://fezvrasta.github.io/bootstrap-material-design/">bootstrap-material-design</a></small></p>
+        </footer>
+    </div>
+
+    {{! Scripts }}
+    <script async defer
+        src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script async defer
+        src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script async defer
+        src="/scripts/script.js"></script>
+
+    <script
+        src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
+    <script
+        src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+    <script>
+        $(function(){
+            $.material.init();
+        });
+    </script>
+
+    {{! GA }}
+    <script>
+        {{! if( '{{{package.homepage}\}\}' === 'http://' + window.location.hostname ) { }}
+        {{!   var _gaq = _gaq || []; }}
+        {{!   _gaq.push(['_setAccount', 'UA-27493298-1']); }}
+        {{!   _gaq.push(['_trackPageview']); }}
+
+        {{!   (function() { }}
+        {{!     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; }}
+        {{!     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; }}
+        {{!     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); }}
+        {{!   })(); }}
+        {{! } }}
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{{! Articles }}
+<section class="content articles">
+    <div class="row">
+        <h1 class="col-sm-offset-2 col-sm-10">Articles</h1>
+    </div>
+
+    {{#each (-take 10 docs)}}
+    <div class="row">
+        <article>
+          {{! DATE & Title }}
+          <div class="left-box col-sm-2 small-font">
+              <p property="dc:created">
+                  {{d-format 'YYYY MMM DD' this.date}}
+              </p>
+
+              {{! Info }}
+              <p>{{{_keyword-links this.keywords}}}</p>
+          </div>
+          <div class="col-sm-10">
+              <a class="index-article-title" href="{{{this.uri}}}">
+                  <h4>{{{this.title}}}</h4>
+              </a>
+          </div>
+        </article>
+    </div>
+    {{/each}}
+</section>

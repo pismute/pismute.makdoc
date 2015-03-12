@@ -1,0 +1,65 @@
+{
+  "name": "pismute.makdoc",
+  "description": "P is mute",
+  "version": "0.1.0",
+  "homepage": "https://pismute.github.io/",
+  "author": {
+    "name": "Changwoo Park",
+    "email": "pismute@gmail.com",
+    "url": "https://pismute.github.io/"
+  },
+  "keywords": [
+    "Learning"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pismute/pismute.makdoc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pismute/pismute.makdoc/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/pismute/pismute.makdoc/blob/master/LICENSE-MIT"
+    }
+  ],
+  "private": true,
+  "main": "lib/pismute.makdoc",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "dashbars": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-cached": "*",
+    "gulp-connect": "*",
+    "gulp-filter": "*",
+    "gulp-gh-pages": "*",
+    "gulp-handlebars": "*",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "*",
+    "gulp-load-plugins": "*",
+    "gulp-makdoc": "git+https://github.com/pismute/gulp-makdoc.git",
+    "gulp-open": "*",
+    "gulp-rename": "*",
+    "gulp-size": "*",
+    "gulp-using": "*",
+    "gulp-util": "*",
+    "handlebars": "*",
+    "lodash": "*",
+    "marked": "*",
+    "moment": "*",
+    "pygmentize-bundled": "*",
+    "run-sequence": "*",
+    "through2": "*"
+  },
+  "dependencies": {}
+}

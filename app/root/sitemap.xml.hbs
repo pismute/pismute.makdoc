@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>{{package.homepage}}</loc>
+        <lastmod>{{d-iso (d-now)}}</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    {{#each docs}}
+    <url>
+        <loc>{{this.url}}</loc>
+        <lastmod>{{d-iso this.date}}</lastmod>
+        <changefreq>never</changefreq>
+    </url>
+    {{/each}}
+</urlset>

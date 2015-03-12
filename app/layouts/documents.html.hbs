@@ -1,0 +1,43 @@
+<link rel="stylesheet" media="screen, projection"
+    href="/styles/github.css"></link>
+<link rel="stylesheet" media="screen, projection"
+    href="/styles/pygment-github.css"></link>
+<link rel="stylesheet" media="screen, projection"
+    href="/styles/markdown.css"></link>
+
+<script async defer
+    src="/babel.js"></script>
+<script async defer>
+    function runLangJs(){
+        $(function(){ //defer
+            $('.lang-js').each(function(){
+                var script = document.createElement('script');
+                script.type = "text/babel";
+                $(script).text('(function(){\n' + $(this).text() + '\n})()');
+
+                $('#script-holder').append(script);
+            });
+        });
+    }
+</script>
+<section class="content">
+    <article id="post" class="row post {{{class}}}" typeof="sioc:post" about="{{{uri}}}" lang="ko-kr">
+        {{! Date & Title }}
+        <div class="col-sm-2 small-font">
+            <br /><br />
+            <p property="dc:created">{{{d-format 'YYYY MMM DD' date}}}</p>
+            {{! >social-buttons}}
+
+            {{! Keywords }}
+            <p class="small-font top-line">{{{_keyword-links this.keywords}}}</p>
+        </div>
+
+        {{! Content Container }}
+        <div class="col-sm-10">
+            {{! Content }}
+            <div property="sioc:content">{{{contents}}}</div>
+        </div>
+    </article>
+
+    <span id="script-holder"></span>
+</section>
