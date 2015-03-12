@@ -16,7 +16,7 @@ gulp.task('deploy', ['makdoc'], function () {
 
     return gulp.src(path.join($.makdoc.vars.DIST(),'**/*'))
         .pipe(deploy({
-            remoteUrl: 'git@github.com:pismute/pismute.github.com.git',
+            remoteUrl: 'git@github.com:pismute/pismute.github.io.git',
             cacheDir: '.gh-pages',
             branch:'master'
         }));
