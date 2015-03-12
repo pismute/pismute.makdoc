@@ -1,5 +1,7 @@
 # d3js: chapter 5. data
 
+> 이 글은 http://infovis.kr 스터디 하면서 작성했고 [d3.js](http://www.aladin.co.kr/shop/wproduct.aspx?ISBN=896626106X) 5장의 내용이다.
+
 <style>
 circle {
     fill: none;
@@ -7,8 +9,6 @@ circle {
     stroke: black;
     stroke-width: 1.5px;
 </style>
-
-> 이 글은 http://infovis.kr 스터디 하면서 작성했고 [d3.js](http://www.aladin.co.kr/shop/wproduct.aspx?ISBN=896626106X) 5장의 내용이다.
 
 <p id="phr-scatch"></p>
 
