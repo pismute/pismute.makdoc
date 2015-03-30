@@ -25,7 +25,21 @@
         <div class="col-sm-2 small-font">
             <br /><br />
             <p property="dc:created">{{{d-format 'YYYY MMM DD' date}}}</p>
-            {{! >social-buttons}}
+
+            {{! social button }}
+            <div id="social-buttons" class="top-line">
+              <ul class="unstyled">
+                <li><a class="twitter-share-button" href="https://twitter.com/share"
+                  data-url="{{{s-slice package.homepage 0 -1}}}{{{uri}}}" data-via="pismute"
+                  data-count="horizontal" data-lang="en">tweet</a></li>
+                <li><div class="g-plusone" data-size="medium"
+                    data-href="{{{s-slice package.homepage 0 -1}}}{{{uri}}}"></div></li>
+                <li><div class="fb-like"
+                  data-href="{{{s-slice package.homepage 0 -1}}}{{{uri}}}" data-send="false"
+                  data-layout="button_count" data-show-faces="false"></div></li>
+              </ul>
+            </div>
+            {{! / social button }}
 
             {{! Keywords }}
             <p class="small-font top-line">{{{_keyword-links this.keywords}}}</p>
@@ -40,3 +54,8 @@
 
     <span id="script-holder"></span>
 </section>
+
+<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="https://apis.google.com/js/plusone.js"></script>
