@@ -47,7 +47,7 @@
     "gulp-imagemin": "*",
     "gulp-jshint": "*",
     "gulp-load-plugins": "*",
-    "gulp-makdoc": "git+https://github.com/pismute/gulp-makdoc.git",
+    "gulp-makdoc": "*",
     "gulp-open": "*",
     "gulp-rename": "*",
     "gulp-size": "*",
