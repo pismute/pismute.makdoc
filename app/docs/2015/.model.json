@@ -1,0 +1,10 @@
+{
+    "*": {
+        "date": "2015-01-01",
+        "keywords": ["english"]
+    },
+    "gulp.html.md": {
+        "date": "2015-06-05",
+        "keywords": ["gulp"]
+    }
+}
