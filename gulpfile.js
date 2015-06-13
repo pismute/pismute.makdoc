@@ -24,7 +24,20 @@ gulp.task('deploy', ['makdoc'], function () {
 
 // Bower helper
 gulp.task('bower', function() {
-    return gulp.src('app/bower_components/**/*.{js,css,map}')
+    var base = 'app/bower_components/';
+    var files = [
+        'requirejs/require.js',
+        'bootstrap/dist/**/*.min.{js,css}',
+        'bootstrap-material-design/dist/**/material.min.{js,css}',
+        'bootstrap-material-design/dist/**/ripples.min.{js,css}',
+        '{d3,jquery,lodash,}/**/*.min.js',
+        'moment/min/{locales,moment}.min.js'
+    ];
+    files = files.map(function(file){
+        return 'app/bower_components/' + file;
+    });
+
+    return gulp.src(files, {base:base})
         .pipe(gulp.dest('dist/bower_components/'));
 });
 
