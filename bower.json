@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
-    "d3": "*"
+    "d3": "*",
+    "lodash": "*",
+    "moment": "*",
+    "jquery": "*",
+    "bootstrap": "*",
+    "bootstrap-material-design": "*"
   },
   "devDependencies": {},
   "directory": "app/bower_components",
