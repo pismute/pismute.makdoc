@@ -30,8 +30,9 @@ gulp.task('bower', function() {
         'bootstrap/dist/**/*.min.{js,css}',
         'bootstrap-material-design/dist/**/material.min.{js,css}',
         'bootstrap-material-design/dist/**/ripples.min.{js,css}',
-        '{d3,jquery,lodash,}/**/*.min.js',
-        'moment/min/{locales,moment}.min.js'
+        '{d3,jquery,lodash,dashbars}/**/*.min.js',
+        'moment/min/{locales,moment}.min.js',
+        'handlebars/handlebars/handlebars.min.js'
     ];
     files = files.map(function(file){
         return 'app/bower_components/' + file;

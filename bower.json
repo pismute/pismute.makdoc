@@ -8,7 +8,10 @@
     "moment": "*",
     "jquery": "*",
     "bootstrap": "*",
-    "bootstrap-material-design": "*"
+    "bootstrap-material-design": "*",
+    "requirejs": "*",
+    "handlebars": "*",
+    "dashbars": "*"
   },
   "devDependencies": {},
   "directory": "app/bower_components",
