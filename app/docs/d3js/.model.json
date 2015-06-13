@@ -1,0 +1,20 @@
+{
+    "*": {
+        "keywords": ["d3", "infoviz"]
+    },
+    "05-data.html.md": {
+        "date": "2015-01-25"
+    },
+    "06-drawing-with-data.html.md": {
+        "date": "2015-01-25"
+    },
+    "07-scale.html.md": {
+        "date": "2015-02-02"
+    },
+    "08-axis.html.md": {
+        "date": "2015-02-02"
+    },
+    "12-geomapping.html.md": {
+        "date": "2015-03-10"
+    }
+}
