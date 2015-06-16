@@ -151,7 +151,3 @@ d3.select('#phr-join-enter').selectAll('p')
 #### Transition
 
 d3js 책 9장에서 배운다:
-
-<script>
-    runLangJs()
-</script>

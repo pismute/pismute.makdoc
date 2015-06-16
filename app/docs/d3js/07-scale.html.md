@@ -508,7 +508,3 @@ $('#clamp-02').text(scale(10));
 ##### [d4.scale.category20b](https://github.com/mbostock/d3/wiki/Ordinal-Scales#category20b)
 ##### [d4.scale.category20c](https://github.com/mbostock/d3/wiki/Ordinal-Scales#category20c)
 #### [d3.time.scale()](https://github.com/mbostock/d3/wiki/Time-Scales)
-
-<script>
-    runLangJs()
-</script>

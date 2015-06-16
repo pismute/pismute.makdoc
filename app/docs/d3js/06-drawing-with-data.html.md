@@ -113,7 +113,3 @@ text.enter()
     .attr('font-size', '11px')
     .attr('fill', 'red');
 ```
-
-<script>
-    runLangJs();
-</script>

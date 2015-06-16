@@ -1,0 +1,14 @@
+{{{content}}}
+
+<script async defer>
+
+require(['$', 'babel'], function($){
+    $('.lang-js').each(function(){
+
+        babel.run('require(["$", "_"], function($, _){' +
+                  $(this).text() + '});');
+
+    });
+});
+
+</script>

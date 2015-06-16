@@ -1,0 +1,11 @@
+{
+    "*": {
+        "layout" : "documents"
+    },
+    "default.html.hbs": {
+        "layout" : false
+    },
+    "documents.html.hbs": {
+        "layout" : "default"
+    }
+}

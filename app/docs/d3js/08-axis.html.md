@@ -378,7 +378,3 @@ svg.append('g')
     .attr('transform', `translate(${padding}, 0)`)
     .call(yAxis);
 ```
-
-<script>
-    runLangJs()
-</script>

@@ -5,20 +5,6 @@
 <link rel="stylesheet" media="screen, projection"
     href="/styles/markdown.css"></link>
 
-<script src="/babel.js"></script>
-<script>
-    function runLangJs(){
-        $(function(){ //defer
-            $('.lang-js').each(function(){
-                var script = document.createElement('script');
-                script.type = "text/babel";
-                $(script).text('(function(){\n' + $(this).text() + '\n})()');
-
-                $('#script-holder').append(script);
-            });
-        });
-    }
-</script>
 <section class="content">
     <article id="post" class="row post {{{class}}}" typeof="sioc:post" about="{{{uri}}}" lang="ko-kr">
         {{! Date & Title }}
@@ -52,10 +38,12 @@
         </div>
     </article>
 
-    <span id="script-holder"></span>
 </section>
 
 <div id="fb-root"></div>
-<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
-<script src="//platform.twitter.com/widgets.js"></script>
-<script src="//apis.google.com/js/plusone.js"></script>
+<script async defer
+    src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script async defer
+    src="http://platform.twitter.com/widgets.js"></script>
+<script async defer
+    src="http://apis.google.com/js/plusone.js"></script>

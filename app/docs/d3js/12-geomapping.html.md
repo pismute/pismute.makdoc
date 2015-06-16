@@ -489,7 +489,3 @@ d3.json("oceans.json", function(json) {
 
 });
 ```
-
-<script>
-    runLangJs();
-</script>
