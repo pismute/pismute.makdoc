@@ -14,7 +14,8 @@ gulp.task('deploy', ['makdoc'], function () {
     var deploy = require('gulp-gh-pages');
     var path = require('path');
 
-    return gulp.src(path.join($.makdoc.vars.DIST(),'**/*'))
+    return gulp.src([path.join($.makdoc.vars.DIST(),'**/*'),
+                    '!**/*.map'])
         .pipe(deploy({
             remoteUrl: 'git@github.com:pismute/pismute.github.io.git',
             cacheDir: '.gh-pages',
