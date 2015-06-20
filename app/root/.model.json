@@ -1,0 +1,8 @@
+{
+    "*": {
+        "layout": null
+    },
+    "index.html.hbs": {
+        "layout": "default"
+    }
+}
