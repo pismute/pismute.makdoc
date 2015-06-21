@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{! Meta }}
+    {{! Meta & Links }}
+    {{! List of Usable HTML Meta and Link Tags }}
+    {{! https://gist.github.com/kevinSuttle/1997924 }}
+    {{! https://github.com/outsideris/meta-tags-generator }}
     <meta charset="utf=8"></meta>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
@@ -12,13 +15,15 @@
     <meta name="keywords"
         content="{{{-join (-find '-not-empty?' (-array this.keywords package.keywords)) ','}}}"></meta>
     <meta name="author"
-        content="{{{package.author.name}}}"></meta>
+        content="{{{ package.author.name }}}"></meta>
 
-  {{! Icons }}
-    <link rel="shortcut icon" href="/images/favicon.ico"></link>
+    <link rel="home" type="text/html" href="{{{ package.homepage }}}" />
     <link rel="alternate" type="application/atom+xml"
-        title="{{{-find '-not-empty?' (-array title package.title)}}} &raquo; Feed"
-        href="{{{package.homepage}}}atom.xml"></link>
+        title="{{{-find '-not-empty?' (-array title package.title) }}} &raquo; Feed"
+        href="{{{ package.homepage }}}atom.xml"></link>
+
+    {{! Icons }}
+    <link rel="shortcut icon" href="/images/favicon.ico"></link>
 
     {{! Styles }}
     <link rel="stylesheet" media="screen, projection"
@@ -34,34 +39,11 @@
         media="print"></link> }}
 
     {{! Scripts }}
-    <script src="/bower_components/requirejs/require.js"></script>
+    <script
+        src="/bower_components/requirejs/require.js"></script>
     <script src="/scripts/require-config.js"></script>
     <script async defer src="/scripts/script.js"></script>
 
-    <script async defer>
-
-    require(['$',
-             'bootstrap',
-             'bootstrap-material',
-             'bootstrap-material-ripples'],
-            function($){
-        $.material.init();
-    });
-
-    {{! GA }}
-    {{! if( '{{{package.homepage}\}\}' === 'http://' + window.location.hostname ) { }}
-    {{!   var _gaq = _gaq || []; }}
-    {{!   _gaq.push(['_setAccount', 'UA-27493298-1']); }}
-    {{!   _gaq.push(['_trackPageview']); }}
-
-    {{!   (function() { }}
-    {{!     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; }}
-    {{!     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; }}
-    {{!     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); }}
-    {{!   })(); }}
-    {{! } }}
-
-    </script>
 </head>
 
 <body>
@@ -97,7 +79,7 @@
     </nav>
     <div class="container">
         <div>
-          {{{contents}}}
+          {{{ contents }}}
         </div>
         <footer class="footer">
             <p>Copyright &copy; 2015+ Changwoo Park</p>

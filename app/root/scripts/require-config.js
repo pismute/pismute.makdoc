@@ -1,4 +1,5 @@
 //requirejs.s.contexts._.config.paths
+/* jshint undef: false */
 require.config({
     baseUrl: '/bower_components/',
     paths: {

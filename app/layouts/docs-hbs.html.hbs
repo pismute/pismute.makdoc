@@ -1,14 +1,3 @@
-{{{contents}}}
+{{{ contents }}}
 
-<script defer>
-
-require(['$', 'handlebars'], function($, handlebars){
-    $('.lang-hbs').each(function(index){
-        var data = window.data || $(this).attr('data') || {};
-        var src = $(this).text();
-        var template = Handlebars.compile(src);
-        $(this).text(template(data));
-    });
-});
-
-</script>
+<script async defer src="/scripts/script-docs-hbs.js"></script>
