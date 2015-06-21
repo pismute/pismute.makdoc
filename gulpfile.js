@@ -72,9 +72,25 @@ gulp.task('lint', function(){
  * template data
  */
 
-require('gulp-makdoc').templateData({
+makdoc.templateData({
     package:require('./package.json')
 });
+
+/*************************************************************************
+ * override:highlight
+ */
+
+var _highlight = makdoc.util.highlight();
+
+var _alias = {
+    'js-run': 'js'
+};
+
+makdoc.util.highlight = function() {
+    return function(code, lang, done){
+        return _highlight(code, _alias[lang] || lang, done);
+    }
+}
 
 /*************************************************************************
  * helpers
