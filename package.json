@@ -53,6 +53,8 @@
     "gulp-size": "*",
     "gulp-using": "*",
     "gulp-util": "*",
+    "gulp-uglify": "*",
+    "gulp-sourcemaps": "*",
     "handlebars": "*",
     "lodash": "*",
     "marked": "*",
