@@ -9,6 +9,7 @@
   "undef": true,
   "unused": true,
   "boss": true,
+  "eqnull": true,
   "predef": ["require", "window"],
-  "eqnull": true
+  "esnext": true
 }

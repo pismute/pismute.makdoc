@@ -16,12 +16,12 @@ require.config({
     },
     shim: {
         '$': {
-            init: function(){
+            init() {
                 return jQuery.noConflict();
             }
         },
         '_': {
-            init: function(){
+            init() {
                 return _.noConflict();
             }
         },
@@ -36,9 +36,10 @@ require.config({
         },
         'handlebars': {
             exports: 'Handlebars',
-            init: function(){
-                require('dashbars', function(dashbars){
-                    dashbars.help(Handlebars);
+            init() {
+                require(['dashbars', 'handlebars'],
+                        (dashbars, handlebars)=> {
+                    dashbars.help(handlebars);
                 });
             }
         },
