@@ -26,7 +26,7 @@ Gulp의 뼈대는 비동기 타스크와 스트림이다.
 
 타스크는 아래와 같이 정의한다:
 
-```
+```js
 gulp.task('myTask', function(){
     // do anything.
 });
@@ -40,7 +40,7 @@ gulp.task('myTask', function(){
 
 #### Callback
 
-```
+```js
 // run a command in a shell
 var exec = require('child_process').exec;
 gulp.task('jekyll', function(cb) {
@@ -54,7 +54,7 @@ gulp.task('jekyll', function(cb) {
 
 #### Return a stream
 
-```
+```js
 gulp.task('somename', function() {
     var stream = gulp.src('client/**/*.js')
         .pipe(minify())
@@ -65,7 +65,7 @@ gulp.task('somename', function() {
 
 #### Return a promise
 
-```
+```js
 var Q = require('q');
 
 gulp.task('somename', function() {
@@ -104,7 +104,7 @@ Vinyl 파일은 가상 파일로 일종의 컨테이너다. 세 가지 중 하�
 
 Gulp는 이 Vinyl파일을 Transform하는 Transformer를 죽죽 연결하는 방식으로 사용한다:
 
-```
+```js
 gulp.task('mytask', function(){
     return gulp.src('path/to/**.js')
         .pipe($.using())
@@ -122,7 +122,7 @@ gulp.task('mytask', function(){
 
 플러그인은 아래와 같이 만들고 사용한다:
 
-```
+```js
 // 만들기
 var through = require('through2'); //이하 생략
 
@@ -138,7 +138,7 @@ var myPlugin = function(){
 
 실제 플러그인은 아래처럼 만든다:
 
-```
+```js
 var plugin = function() {
     return through.obj(function(file, enc, done){
         if (file.isNull()) {
@@ -157,6 +157,7 @@ var plugin = function() {
     });
 };
 ```
+
 ## 테스트
 
 사실 아직 테스트를 잘 작성하지 않아서 연구를 많이 못 했다. 하지만, 고민하던 것을 정리해본다.
@@ -169,7 +170,7 @@ Gulp에서 직접 작성하는 코드는 크게 타스크와 플러그인으로 
 
 타스크를 테스트하는 방법은 아직 모른다. 테스트를 짠 적 없다. 함수로 분리해서 테스트해도 돼서 우회 책도 있다. 그래도 굳이 해야 한다면 현재는 아래처럼 하겠다.
 
-```
+```js
 var myTask = function(done){
     done();
 }
@@ -203,7 +204,7 @@ export.exports = {
 
 어떤 것을 로딩할지는 `package.json`의 의존성을 보고 결정한다. 예를 들어 `gulp-using` 플러그인이 `package.json`에 정의돼 있으면 `$.using()`을 사용할 수 있다.
 
-```
+```js
 var $ = require('./gulp-load-plugins')
 
 gulp.task('mytask', function(){
@@ -219,7 +220,7 @@ gulp.task('mytask', function(){
 
 타스크를 차례대로 실행하거나 병렬로 실행할 수 있다. Gulp에는 타스크를 줄 세우는 기능이 약하기 때문에 유용하다.
 
-```
+```js
 var seq = require('run-sequence');
 gulp.task('myTask', function(done){
     seq('init',
@@ -238,7 +239,7 @@ gulp.task('myTask', function(done){
 
 watch 타스크를 사용할 때 필수다. 처리한 파일을 메모리에 저장해뒀다가, 다음에 다시 시도하면 변경한 파일만 통과시킨다.
 
-```
+```js
 gulp.task('myTask', function(done){
     return gulp.src('path/to/**')
         .pipe($.cached('myTask')) //cache 이름
@@ -269,7 +270,7 @@ gulp.task('default', function(done){
 
 Livereload를 위해서 필요하다:
 
-```
+```js
 gulp.task('server', function(done){
     $.connect.server({
         livereload: true,
@@ -283,7 +284,7 @@ gulp.task('server', function(done){
 
 이렇게 서버를 띄우고 Livereload를 할 타스크에 플러그인을 추가한다:
 
-```
+```js
         .pipe(gulp.dest('scripts/'))
         .pipe($.connect.reload());
 ```
@@ -294,7 +295,7 @@ gulp.task('server', function(done){
 
 이 플러그인은 if 문이라고 생각하면 쉽다. 말로 설명하면 에너지가 분산되니 바로 소스를 보자.
 
-```
+```js
 gulp.task('styles', function() {
     var lessFilter = $.filter('**/*.less');
     var scssFilter = $.filter('**/*.scss');
@@ -330,7 +331,7 @@ scss 파일을 컴파일하는 것과 less 파일을 컴파일하는 것은 `gul
 
 이미지 최적화는 `gulp-imagemin`을 사용한다:
 
-```
+```js
 gulp.task('images', function () {
     return gulp.src('path/to/image')
         .pipe($.cached('images'))

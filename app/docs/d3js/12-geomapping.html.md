@@ -52,7 +52,7 @@
 
 <p id="phr-path"></p>
 
-```js
+```js-run-d3
 //Width and height
 const w = 500;
 const h = 300;
@@ -91,7 +91,7 @@ path는 아래처럼 생김:
 
 pie layout:
 
-```
+```js
 var dataset = [5, 10, 20, 45, 5, 25];
 
 // pie layout
@@ -104,7 +104,7 @@ pie chart 그리기:
 
 <div id="phr-pie-chart"></div>
 
-```js
+```js-run-d3
 //Width and height
 const w = 300;
 const h = 300;
@@ -162,7 +162,7 @@ arcs.append("text")
 
 <p id="phr-projection"></p>
 
-```js
+```js-run-d3
 //Width and height
 const w = 500;
 const h = 300;
@@ -233,7 +233,7 @@ Colorado,1.0325
 
 Choropleth 그리기:
 
-```js
+```js-run-d3
 //Width and height
 const w = 500;
 const h = 300;
@@ -321,7 +321,7 @@ rank,place,population,lat,lon
 - 데이터 만들기(저자의 Favorite): http://www.gpsvisualizer.com/geocoder/
 - 데이터 수동 확인: http://teczno.com/squares
 
-```js
+```js-run-d3
 //Width and height
 var w = 500;
 var h = 300;
@@ -455,7 +455,7 @@ Shapefile을 GeoJSON으로 변환하는 **ogr2ogr** 명령어 사용법이 책�
 
 <p id="phr-mercator"></p>
 
-```js
+```js-run-d3
 //Width and height
 const w = 700;
 const h = 500;

@@ -12,7 +12,7 @@ circle {
 
 <p id="phr-scatch"></p>
 
-```js
+```js-run-d3
 var dataset = [5, 10, 15, 20, 25];
 
 d3.select('#phr-scatch').selectAll('p')
@@ -29,7 +29,7 @@ d3.select('#phr-scatch').selectAll('p')
 
 <p id="phr-join"></p>
 
-```js
+```js-run-d3
 var svg = d3.select("#phr-join").append("svg")
         .attr("width", 720)
         .attr("height", 240)
@@ -107,7 +107,8 @@ update/enter/exit selection을 어떤식으로 코딩해야 할지는 [General U
     <div></div> //no selection
 </div>
 ```
-```js
+
+```js-run-d3
 var dataset = [1,2,3];
 
 d3.select('#phr-join-update').selectAll('p')
@@ -135,7 +136,7 @@ d3.select('#phr-join-update').selectAll('p')
 </div>
 ```
 
-```js
+```js-run-d3
 var dataset = [1,2,3,4,5];
 
 d3.select('#phr-join-enter').selectAll('p')

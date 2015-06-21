@@ -12,7 +12,7 @@
 <p id="phr-scatterplot-01"></p>
 
 
-```js
+```js-run-d3
 var w = 500;
 var h = 100;
 
@@ -59,7 +59,7 @@ text.enter()
 
 <p id="phr-scatterplot-02"></p>
 
-```js
+```js-run-d3
 var w = 500;
 var h = 100;
 
@@ -126,7 +126,7 @@ text.enter()
 
 <p id="phr-scatterplot-03"></p>
 
-```
+```js-run-d3
 var w = 500;
 var h = 100;
 
@@ -145,7 +145,7 @@ var dataset = [
 
 //동적 스케일
 var xScale = d3.scale.linear()
-    .domain([0, d3.max(dataset, (d)=> d[0])) // d = [5, 20], ...
+    .domain([0, d3.max(dataset, (d)=> d[0])]) // d = [5, 20], ...
     .range([0,w]);
 
 var yScale = d3.scale.linear()
@@ -182,7 +182,7 @@ text.enter()
 
 <p id="phr-scatterplot-04"></p>
 
-```js
+```js-run-d3
 var w = 500;
 var h = 100;
 
@@ -242,7 +242,7 @@ text.enter()
 
 <p id="phr-scatterplot-05"></p>
 
-```js
+```js-run-d3
 var w = 500;
 var h = 100;
 
@@ -304,7 +304,7 @@ text.enter()
 
 <p id="phr-scatterplot-06"></p>
 
-```js
+```js-run-d3
 var w = 500;
 var h = 100;
 
@@ -366,7 +366,7 @@ text.enter()
 
 <p id="phr-scatterplot-07"></p>
 
-```js
+```js-run-d3
 var w = 500;
 var h = 300;
 
@@ -436,7 +436,7 @@ text.enter()
 **scale(0.123)**:<p id="nice-02"></p>
 **scale(4.567)**:<p id="nice-03"></p>
 
-```js
+```js-run-d3
 var scale = d3.scale.linear()
     .domain([0.123, 4.567])
     .range([0, 500])
@@ -457,7 +457,7 @@ $('#nice-03').text(scale(4.567));
 **scale(0.123)**:<p id="range-round-02"></p>
 **scale(4.567)**:<p id="range-round-03"></p>
 
-```js
+```js-run-d3
 var scale = d3.scale.linear()
     .domain([0.123, 4.567])
     .rangeRound([0, 500])
@@ -474,7 +474,7 @@ $('#range-round-03').text(scale(4.567));
 
 **scale(10)**:<p id="clamp-01"></p>
 
-```js
+```js-run-d3
 var scale = d3.scale.linear()
     .domain([0.123, 4.567])
     .range([0, 500]);
@@ -484,7 +484,7 @@ $('#clamp-01').text(scale(10));
 
 **scale(10)**:<p id="clamp-02"></p>
 
-```js
+```js-run-d3
 var scale = d3.scale.linear()
     .domain([0.123, 4.567])
     .range([0, 500])

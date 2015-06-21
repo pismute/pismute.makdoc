@@ -1,6 +1,5 @@
 {
     "*": {
-        "layout": "docs-d3",
         "keywords": ["d3", "infoviz"]
     },
     "05-data.html.md": {

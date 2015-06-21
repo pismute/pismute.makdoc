@@ -1,7 +1,14 @@
 {
     "*": {
         "date": "2015-01-01",
+    },
+    "better-english.html.md": {
+        "date": "2015-04-08",
         "keywords": ["english"]
+    },
+    "dashbars.html.md": {
+        "date": "2015-04-02",
+        "keywords": ["dashbar", "toys"]
     },
     "gulp.html.md": {
         "date": "2015-06-05",

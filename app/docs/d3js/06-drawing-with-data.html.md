@@ -6,7 +6,7 @@
 
 <p id="phr-svg-sample"></p>
 
-```js
+```js-run-d3
 var w = 500
 var h = 100
 var dataset = [5, 10, 15, 20, 25];
@@ -32,7 +32,7 @@ circle.enter()
 
 <p id="phr-bar-chart"></p>
 
-```js
+```js-run-d3
 var w = 500
 var h = 100
 var dataset = [5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
@@ -72,7 +72,7 @@ text.enter()
 
 <p id="phr-scatterplot"></p>
 
-```js
+```js-run-d3
 var w = 500
 var h = 100
 var dataset = [

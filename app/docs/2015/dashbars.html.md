@@ -47,7 +47,7 @@
 
 [Handlebarsjs][]에서는 함수를 정의할 수 없기 때문에 따로 헬퍼 함수를 정의하고 함수 이름을 사용하도록 했다. 아래와 같이 헬퍼를 정의하면:
 
-```
+```js
 Handlebars.registerHelper('-as-is', function(o){
     return o;
 });
@@ -63,7 +63,7 @@ Handlebars.registerHelper('-as-is', function(o){
 
 아규먼트로 받은 리스트나 객체를 그대로 리턴하지 않는다. 리턴하는 객체는 항상 새로운 객체다. `-sort` 헬퍼의 예를 들면 아래처럼 아규먼트로 받은 리스트를 복사해서(slice) 정렬한다(sort).
 
-```
+```js
 registerHelpers('-sort', function(list, compare, options) {
     return list.slice().sort(compare);
 });

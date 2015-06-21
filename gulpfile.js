@@ -83,7 +83,8 @@ makdoc.templateData({
 var _highlight = makdoc.util.highlight();
 
 var _alias = {
-    'js-run': 'js'
+    'js-run': 'js',
+    'js-run-d3': 'js'
 };
 
 makdoc.util.highlight = function() {

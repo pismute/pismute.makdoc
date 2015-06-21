@@ -6,6 +6,36 @@ require(['$',
     $.material.init();
 });
 
+require(['$'], function($){
+    $(function(){
+        $('.lang-hbs').each(function(){
+            var that = this;
+            require(['handlebars'], function(handlebars){
+                var data = window.data || $(that).attr('data') || {};
+                var src = $(that).text();
+                var template = handlebars.compile(src);
+                $(that).text(template(data));
+            });
+        });
+
+        $('.lang-js-run').each(function(){
+            var that = this;
+            require(['babel'], function(babel){
+                babel.run('require(["$", "_"], function($, _){' +
+                        $(that).text() + '});');
+            });
+        });
+
+        $('.lang-js-run-d3').each(function(){
+            var that = this;
+            require(['babel'], function(babel){
+                babel.run('require(["$", "_", "d3"], function($, _, d3){' +
+                        $(that).text() + '});');
+            });
+        });
+    });
+});
+
 //ga
 // if( '{{{package.homepage}\}\}' === 'http://' + window.location.hostname ) {
 //     var _gaq = _gaq || [];

@@ -6,7 +6,7 @@
 
 이 페이지 내내 사용하는 공통 코드(7장의 내용):
 
-```js
+```js-run-d3
 //global로 선언하는 것은 안좋은 습관이지만,
 //아래 예제에서 계속 사용하기 위해 global로 선언한다.
 var g = window;
@@ -69,7 +69,7 @@ window.scatterplot = function(selector){
 
 <p id="phr-scatterplot-01"></p>
 
-```js
+```js-run-d3
 //svg.append('g')
 scatterplot('#phr-scatterplot-01').append('g')
     .call(d3.svg.axis()
@@ -85,7 +85,7 @@ Axis그릴려면 많은 SVG 엘리먼트가 필요한데 그 엘리먼트를 담
 
 <p id="phr-scatterplot-02"></p>
 
-```js
+```js-run-d3
 var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient('bottom');
@@ -142,7 +142,7 @@ text.enter()
 
 <p id="phr-scatterplot-03"></p>
 
-```js
+```js-run-d3
 var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient('bottom');
@@ -172,7 +172,7 @@ text.enter()
 
 <p id="phr-scatterplot-04"></p>
 
-```js
+```js-run-d3
 var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient('bottom')
@@ -199,7 +199,7 @@ text.enter()
 
 <p id="phr-scatterplot-05"></p>
 
-```js
+```js-run-d3
 var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient('bottom')
@@ -228,7 +228,7 @@ text.enter()
 
 <p id="phr-scatterplot-06"></p>
 
-```js
+```js-run-d3
 var padding = 30;
 
 //아래 예제에서 재정의 하기 귀찮으니 글로벌로 선언한다.
@@ -271,7 +271,7 @@ text.enter()
 
 <p id="phr-scatterplot-07"></p>
 
-```js
+```js-run-d3
 var g = window
 g.dataset = [];
 var numDataPoints = 50;
@@ -335,7 +335,7 @@ text.enter()
 
 <p id="phr-scatterplot-08"></p>
 
-```js
+```js-run-d3
 var svg = scatterplot('#phr-scatterplot-08');
 svg.append('g')
     .attr('class', 'axis')
@@ -354,7 +354,7 @@ svg.append('g')
 
 <p id="phr-scatterplot-09"></p>
 
-```js
+```js-run-d3
 var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient('bottom')
