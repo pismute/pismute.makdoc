@@ -1,10 +1,16 @@
 'use strict';
 
 var gulp = require('gulp');
+var Handlebars = require('handlebars');
 var $ = require('gulp-load-plugins')();
 var seq = require('run-sequence');
-var makdoc = require('gulp-makdoc'); // should laod before local tasks
 var through = require('through2');
+
+/*************************************************************************
+ * initialize makdoc
+ */
+var makdoc = require('gulp-makdoc'); // should init before local task
+makdoc.init(gulp, Handlebars);
 
 /*************************************************************************
  * tasks
@@ -80,14 +86,13 @@ makdoc.templateData({
  * override:highlight
  */
 
-var _highlight = makdoc.util.highlight();
-
 var _alias = {
     'js-run': 'js',
     'js-run-d3': 'js'
 };
 
 makdoc.util.highlight = function() {
+    var _highlight = makdoc.util.highlight_pygment();
     return function(code, lang, done){
         return _highlight(code, _alias[lang] || lang, done);
     }
@@ -98,7 +103,6 @@ makdoc.util.highlight = function() {
  */
 
 var _ = require('lodash');
-var Handlebars = require('handlebars');
 
 var arrayfy = function(value) {
     //value is string or array
