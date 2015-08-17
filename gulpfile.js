@@ -9,8 +9,7 @@ var through = require('through2');
 /*************************************************************************
  * initialize makdoc
  */
-var makdoc = require('gulp-makdoc'); // should init before local task
-makdoc.init(gulp, Handlebars);
+var makdoc = require('gulp-makdoc')(gulp, Handlebars); // should init before local task
 
 /*************************************************************************
  * tasks
@@ -20,7 +19,7 @@ gulp.task('deploy', ['makdoc'], function () {
     var deploy = require('gulp-gh-pages');
     var path = require('path');
 
-    return gulp.src([path.join($.makdoc.vars.DIST(),'**/*'),
+    return gulp.src([path.join(makdoc.vars.DIST(),'**/*'),
                     '!**/*.map'])
         .pipe(deploy({
             remoteUrl: 'git@github.com:pismute/pismute.github.io.git',
@@ -56,7 +55,7 @@ gulp.task('makdoc:init:after', function(done){
         };
     };
 
-    $.makdoc.vars.BASE_URL = returns('http://pismute.github.io/'),
+    makdoc.vars.BASE_URL = returns('http://pismute.github.io/'),
 
     done();
 });
