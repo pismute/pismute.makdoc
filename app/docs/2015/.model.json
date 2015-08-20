@@ -12,5 +12,9 @@
     "gulp.html.md": {
         "date": "2015-06-05",
         "keywords": ["gulp"]
+    },
+    "asciidoc.html.asc": {
+        "date": "2015-08-23",
+        "keywords": ["asciidoc"]
     }
 }
