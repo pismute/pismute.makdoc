@@ -30,7 +30,6 @@ gulp.task('deploy', ['makdoc'], function () {
 
 // Bower helper
 gulp.task('bower', function() {
-    var base = 'app/bower_components/';
     var files = [
         'requirejs/require.js',
         'bootstrap/dist/**/*.min.{js,css}',
@@ -41,11 +40,11 @@ gulp.task('bower', function() {
         'handlebars/handlebars/handlebars.min.js'
     ];
     files = files.map(function(file){
-        return 'app/bower_components/' + file;
+        return 'app/bower_components*/' + file;
     });
 
-    return gulp.src(files, {base:base})
-        .pipe(gulp.dest('dist/bower_components/'));
+    return gulp.src(files)
+        .pipe(makdoc.util.dest(makdoc.vars.DIST()));
 });
 
 gulp.task('makdoc:init:after', function(done){
