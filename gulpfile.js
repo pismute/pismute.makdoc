@@ -55,6 +55,8 @@ gulp.task('makdoc:init:after', function(done){
     };
 
     makdoc.vars.BASE_URL = returns('http://pismute.github.io/'),
+    makdoc.vars.IGNORES = returns('!app/bower_components/**');
+    makdoc.vars.SERVER_PORT = returns(9000);
 
     done();
 });
@@ -89,8 +91,8 @@ var _alias = {
     'js-run-d3': 'js'
 };
 
-makdoc.util.highlight = function() {
-    var _highlight = makdoc.util.highlight_pygment();
+var _highlight = makdoc.utils.highlight();
+makdoc.utils.highlight = function() {
     return function(code, lang, done){
         return _highlight(code, _alias[lang] || lang, done);
     }
